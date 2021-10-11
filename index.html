@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+
+    <title>Payment Gateway</title>
+
+    <style>
+        @media(max-width:375px) {
+            html {
+                font-size: 20%;
+            }
+        }
+
+        @media(max-width:426px) {
+            html {
+                font-size: 21%;
+            }
+        }
+
+        @media(max-width:541px) {
+            html {
+                font-size: 26%;
+            }
+        }
+
+        @media(max-width:769px) {
+            html {
+                font-size: 36%;
+            }
+        }
+
+        @media(max-width:1025px) {
+            html {
+                font-size: 48%;
+            }
+        }
+
+        @media(max-width:1355px) {
+            html {
+                font-size: 62.5%;
+            }
+        }
+
+        @media(max-width:1441px) {
+            html {
+                font-size: 65%;
+            }
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Baloo 2', cursive;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav {
+            width: 135rem;
+            height: 8rem;
+            background-color: black;
+            display: flex;
+            box-shadow: 0 .5rem 1rem white;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+        }
+
+        .list li {
+            margin: 2.5rem 5rem;
+        }
+
+        .list li a {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .list li a:hover {
+            color: rgb(240, 37, 10);
+        }
+
+        .dbutton {
+            background-color: rgb(41, 39, 39);
+            border-radius: 1rem;
+            width: 15.8rem;
+            height: 5rem;
+            margin-top: 1.5rem;
+            margin-left: 8rem;
+            padding: 1rem 0rem;
+            outline: none;
+            border: .1rem solid rgb(41, 39, 39);
+            transition: .5s;
+        }
+
+        .dbutton a {
+            text-decoration: none;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .dbutton:hover {
+            background-color: rgb(240, 37, 10);
+            border: .1rem solid rgb(240, 37, 10);
+        }
+
+        .dbutton a:hover {
+            color: white;
+        }
+
+        .mid {
+            width: 135rem;
+            height: 50rem;
+            margin-top: 8rem;
+        }
+
+        .donate {
+            display: flex;
+        }
+
+        .carousel {
+            width: 135rem;
+            height: 52rem;
+        }
+
+        .item img {
+            width: 135rem;
+            height: 50rem;
+        }
+
+
+        #tid {
+            background-color: black;
+            color: white;
+            width: 50rem;
+            height: 5rem;
+            margin-left: 40rem;
+            margin-top: -20rem;
+            border-radius: 1rem;
+            border: 1rem solid black;
+            padding: 0rem 2rem;
+            font-size: 1.7rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+
+        #tid::placeholder {
+            font-weight: bold;
+            color: white;
+            font-size: 1.8rem;
+
+        }
+
+        .donate button {
+            z-index: 10;
+            width: 15rem;
+            height: 6rem;
+            background-color: rgb(240, 37, 10);
+            color: white;
+            border-radius: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: -20.5rem;
+            margin-left: 3rem;
+            border: none;
+            outline: none;
+            transition: .7s;
+        }
+
+        .donate button:hover {
+            background-color: transparent;
+            box-shadow: .1rem .1rem 1rem white;
+        }
+
+        .donate button a{
+            text-decoration: none;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .copy {
+            display: flex;
+            background-color: rgb(5, 5, 5);
+            width: 135rem;
+            height: 6rem;
+            padding: 1.5rem 0rem;
+            font-size: 1.8rem;
+            box-sizing: border-box;
+        }
+
+        .copy span {
+            width: 15rem;
+            margin-right: 21rem;
+            margin-top: 1.3rem;
+            margin-left: 8rem;
+        }
+
+        .copy a {
+            text-decoration: none;
+            color: grey;
+            margin: 1.2rem 4rem;
+            transition: .3s;
+        }
+
+        .copy a:hover {
+            color: rgb(247, 34, 34);
+        }
+
+
+        .social a {
+            margin: 1rem;
+            font-size: 3rem;
+        }
+
+        #yt {
+            color: red;
+            margin-top: 1rem;
+        }
+
+        #twit {
+            color: rgb(29, 161, 242);
+        }
+
+
+        #fb {
+            color: #4267B2;
+            margin-left: 19rem;
+        }
+
+        #inst {
+            color: rgb(241, 11, 80);
+        }
+
+        #link {
+            color: #0077b5;
+        }
+
+        #yt:hover {
+            color: rgb(179, 2, 2);
+        }
+
+        #twit:hover {
+            color: rgb(19, 65, 94);
+        }
+
+        #fb:hover {
+            color: #132a58;
+        }
+
+        #inst:hover {
+            color: rgb(153, 9, 52);
+        }
+
+        #link:hover {
+            color: rgb(14, 44, 145);
+        }
+    </style>
+
+    <script>
+        function myFun() {
+            var amt = document.getElementById("tid").value;
+            localStorage.setItem("amount1", amt);
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <div class="nav navbar-fixed-top">
+        <img id="fs" src="https://www.donatekart.com/images/dkLogo.png" alt="">
+
+        <ul class="list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <button class="dbutton"><a href="donate.html">Donate</a></button>
+
+    </div>
+
+    <div class="mid">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+
+            <div class="carousel-inner">
+
+                <div class="item active" data-bs-interval="10">
+                    <img src="https://www.charities.org/sites/default/files/styles/large/public/children%20across%20america%201.jpg?itok=nZlvcnwI"
+                        alt="Heart rate" style="width:150rem; height: 52rem;">
+                </div>
+
+                <div class="item" data-bs-interval="10">
+                    <img src="https://images.unsplash.com/photo-1502781252888-9143ba7f074e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Heart Rate" style="width:150rem; height: 52rem;">
+                </div>
+
+                <div class="item" data-bs-interval="10">
+                    <img src="https://images.unsplash.com/photo-1554721299-e0b8aa7666ce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Background" style="width:150rem; height: 52rem;">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="donate">
+            <input type="text" name="" id="tid" placeholder="Amount">
+
+            <button><a href="donate.html" onclick="myFun()">Donate</a></button>
+
+        </div>
+    </div>
+
+    <div class="copy">
+        <span> Copyright © 2019</span>
+
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+
+        <div class="social">
+            <a href="#"><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i id="inst" class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i id="yt" class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="#"><i id="twit" class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"><i id="link" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>

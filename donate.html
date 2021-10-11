@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <title>Donate Page</title>
+
+    <style>
+        @media(max-width:375px) {
+            html {
+                font-size: 20%;
+            }
+        }
+
+        @media(max-width:426px) {
+            html {
+                font-size: 21%;
+            }
+        }
+
+        @media(max-width:541px) {
+            html {
+                font-size: 26%;
+            }
+        }
+
+        @media(max-width:769px) {
+            html {
+                font-size: 36%;
+            }
+        }
+
+        @media(max-width:1025px) {
+            html {
+                font-size: 48%;
+            }
+        }
+
+        @media(max-width:1355px) {
+            html {
+                font-size: 62.5%;
+            }
+        }
+
+        @media(max-width:1441px) {
+            html {
+                font-size: 65%;
+            }
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Baloo 2', cursive;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav {
+            width: 135rem;
+            height: 8rem;
+            background-color: black;
+            display: flex;
+            box-shadow: 0 .5rem 1rem white;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+        }
+
+        .list li {
+            margin: 2.5rem 5rem;
+        }
+
+        .list li a {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .list li:hover a {
+            color: rgb(240, 37, 10);
+        }
+
+        .dbutton {
+            background-color: rgb(41, 39, 39);
+            border-radius: 1rem;
+            width: 15.8rem;
+            height: 5rem;
+            margin-top: 1.5rem;
+            margin-left: 8rem;
+            padding: 1rem 0rem;
+            outline: none;
+            border: .1rem solid rgb(41, 39, 39);
+            transition: .5s;
+        }
+
+        .dbutton a {
+            text-decoration: none;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .dbutton:hover {
+            background-color: rgb(240, 37, 10);
+            border: .1rem solid rgb(240, 37, 10);
+        }
+
+        .dbutton a:hover {
+            color: white;
+        }
+
+        .mid {
+            width: 135rem;
+            height: 52rem;
+            margin-top: 8rem;
+            background-color: black;
+            display: flex;
+        }
+
+        .info {
+            width: 67.5rem;
+            height: 52rem;
+        }
+
+        .info-box {
+            width: 54rem;
+            height: 40rem;
+            border: .1rem solid white;
+            margin-top: 6rem;
+            margin-left: 6rem;
+            border-radius: 2rem;
+        }
+
+        .info-box p {
+            display: block;
+            padding-left: 4rem;
+            padding-top: 3rem;
+            font-size: 2.8rem;
+            color: white;
+        }
+
+        .info-det {
+            padding-top: 1.5rem;
+            padding-left: 6rem;
+            font-size: 1.8rem;
+
+        }
+
+        .info-det label {
+            width: 13rem;
+            margin-top: 2.3rem;
+
+        }
+
+        .info-det label span {
+            color: red;
+        }
+
+        .info-det input {
+            width: 30rem;
+            background-color: black;
+            border: .1rem solid white;
+            border-radius: 1rem;
+            padding: .2rem 2rem;
+            font-size: 1.6rem;
+        }
+
+        .info-det input:focus {
+            background-color: rgb(29, 28, 28);
+        }
+
+        .info-btn {
+            width: 54rem;
+            display: flex;
+            border-radius: 2rem;
+            margin-top: 3.8rem;
+            height: 5rem;
+            overflow: hidden;
+        }
+
+        .info-logo {
+            width: 32.4rem;
+            border-top: .1rem solid gray;
+        }
+
+        .info-logo i {
+            font-size: 3rem;
+            margin-left: 3.5rem;
+            margin-top: 1rem;
+            color: whitesmoke;
+        }
+
+        .info-logo i:hover {
+            color: grey;
+        }
+
+        .info-pay {
+            width: 21.6rem;
+            font-size: 2rem;
+            box-sizing: border-box;
+        }
+
+        .info-pay button {
+            width: 21.6rem;
+            height: 5rem;
+            outline: none;
+            background-color: white;
+            border: none;
+            color: black;
+            font-weight: 500;
+            border-collapse: unset;
+            transition: .3s;
+        }
+
+        .info-pay button:hover {
+            background-color: rgb(155, 200, 229);
+        }
+
+        .pay {
+            width: 67.5rem;
+            height: 52rem;
+            box-sizing: border-box;
+            display: none;
+
+        }
+
+        .pay-box {
+            width: 60.75rem;
+            height: 49rem;
+            margin-left: 4rem;
+            margin-top: 2rem;
+        }
+
+        .pay-box P {
+            font-size: 2rem;
+            margin-left: 5rem;
+        }
+
+        .pay-box span {
+            font-size: 2rem;
+            color: rgb(240, 37, 10);
+            font-weight: bold;
+        }
+
+        .pay-box label {
+            margin-left: 5rem;
+            font-size: 2rem;
+        }
+
+        #pay-method {
+            color: white;
+            background-color: black;
+            margin-left: 2rem;
+            padding: 0rem 1rem;
+            font-size: 1.8rem;
+        }
+
+        .pay-box button {
+            background-color: rgb(41, 39, 39);
+            border-radius: 1rem;
+            width: 10rem;
+            height: 4rem;
+            margin-left: 2rem;
+            outline: none;
+            border: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .pay-box button:hover {
+            background-color: rgb(240, 37, 10);
+        }
+
+        #pay-frame {
+            width: 50rem;
+            height: 37rem;
+            margin-top: 1rem;
+            margin-left: 3rem;
+            box-sizing: border-box;
+        }
+
+        .copy {
+            display: flex;
+            background-color: rgb(8, 8, 8);
+            width: 135rem;
+            height: 5rem;
+            padding: .1rem 0rem;
+            font-size: 1.8rem;
+            box-sizing: border-box;
+        }
+
+        .copy span {
+            width: 15rem;
+            margin-right: 21rem;
+            margin-top: 1.3rem;
+            margin-left: 8rem;
+        }
+
+        .copy a {
+            text-decoration: none;
+            color: grey;
+            margin: 1.2rem 4rem;
+            transition: .3s;
+
+        }
+
+        .copy a:hover {
+            color: rgb(247, 34, 34);
+        }
+
+
+        .social a {
+            margin: 1rem;
+            font-size: 3rem;
+        }
+
+        #yt {
+            color: red;
+            margin-top: 1rem;
+        }
+
+        #twit {
+            color: rgb(29, 161, 242);
+        }
+
+
+        #fb {
+            color: #4267B2;
+            margin-left: 19rem;
+        }
+
+        #inst {
+            color: rgb(241, 11, 80);
+        }
+
+        #link {
+            color: #0077b5;
+        }
+
+        #yt:hover {
+            color: rgb(179, 2, 2);
+        }
+
+        #twit:hover {
+            color: rgb(19, 65, 94);
+        }
+
+        #fb:hover {
+            color: #132a58;
+        }
+
+        #inst:hover {
+            color: rgb(153, 9, 52);
+        }
+
+        #link:hover {
+            color: rgb(14, 44, 145);
+        }
+    </style>
+
+    <script>
+        function myFun() {
+            var amount = localStorage.getItem("amount1");
+            document.getElementById("amount").value = amount;
+        }
+        function method() {
+
+            var x = document.getElementById("pay-method").selectedIndex;
+
+            if (x == "0") {
+                document.getElementById("pay-frame").src = "UPI.html";
+            }
+
+            else if (x == "1") {
+                document.getElementById("pay-frame").src = "Credit.html";
+            }
+
+            else if (x == "2") {
+                document.getElementById("pay-frame").src = "Debit.html";
+            }
+
+            else if (x == "3") {
+                document.getElementById("pay-frame").src = "Net.html";
+            }
+        }
+
+        function validate() {
+            var em = document.getElementById("em").value;
+            var num = document.getElementById("mobile").value;
+            var amt = document.getElementById("amount").value;
+            var fname = document.getElementById("fname").value;
+
+            var a = em.indexOf("@");
+            var d = em.indexOf("_");
+            var b = em.lastIndexOf(".");
+            var e = em.substr(0, 1);
+
+            var f = num.charAt(0);
+
+            if (amt.length == 0) {
+                alert("Enter Amount")
+                return false;
+            }
+
+            else if (amt <= 0) {
+                alert("Enter Valid Amount")
+                return false;
+            }
+
+            else if (em.length == 0) {
+                alert("Enter Email Address");
+                return false;
+            }
+
+            else if (a < 1 || b < a + 2 || b + 2 >= em.length) {
+                alert("Invalid Email ID");
+
+                return false;
+            }
+
+            else if (d == 0) {
+                alert("Email should not start with _");
+
+                return false;
+            }
+
+            else if (e >= 1 && e <= 9) {
+                alert("Email sould not start with number");
+
+                return false;
+            }
+
+            else if (num.length > 10 || num.length < 10) {
+                alert(" Mobile Number must contain 10 numbers");
+                return false;
+            }
+
+            else if (f != 6 && f != 7 && f != 8 && f != 9) {
+                alert("Mobile Number should start with 6,7,8,9.");
+                return false;
+            }
+
+            else {
+                document.getElementById("pay").style.display = "block";
+                document.getElementById("total").innerHTML += amt + ".00";
+                localStorage.setItem("email", em);
+                localStorage.setItem("mobile", num);
+                localStorage.setItem("amount", amt);
+                localStorage.setItem("name", fname);
+
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body onload="myFun()">
+    <div class="nav navbar-fixed-top">
+        <img id="fs" src="https://www.donatekart.com/images/dkLogo.png" alt="">
+
+        <ul class="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <button class="dbutton"><a href="donate.html">Donate</a></button>
+
+    </div>
+
+    <div class="mid">
+
+        <div class="info">
+            <div class="info-box">
+                <p>Payment Details</p>
+
+                <form class="info-det" action="#">
+                    <label>Amount <span>*</span></label>
+                    <input type="text" id="amount">
+
+                    <br> <label>Email <span>*</span></label>
+                    <input type="email" id="em">
+
+                    <br> <label>Mobile No. <span>*</span></label>
+                    <input type="text" id="mobile">
+
+                    <br><label>Full Name </label>
+                    <input type="text" id="fname">
+                </form>
+
+                <div class="info-btn">
+                    <div class="info-logo">
+                        <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                        <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                        <i class="fa fa-paypal" aria-hidden="true"></i>
+                        <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+
+                    </div>
+
+                    <div class="info-pay" onclick="validate()">
+                        <button>Proceed</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pay" id="pay">
+            <div class="pay-box">
+                <p>Total Payment :&nbsp; ₹ &nbsp;<span id="total"></span></p>
+                <label>Payment Method :</label>
+
+                <select id="pay-method" required>
+                    <option value="upi">UPI</option>
+                    <option value="credit">Credit Card</option>
+                    <option value="debit">Debit Card</option>
+                    <option value="net">Net Banking</option>
+                </select>
+
+                <button id="pay-button" onclick="method()">Ok</button>
+
+                <iframe src="" frameborder="0" id="pay-frame"></iframe>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="copy">
+        <span> Copyright © 2019</span>
+
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+
+        <div class="social">
+            <a href="#"><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i id="inst" class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i id="yt" class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="#"><i id="twit" class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"><i id="link" class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>

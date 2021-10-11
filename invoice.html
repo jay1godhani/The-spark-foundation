@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <title>Invoice</title>
+
+    <style>
+        @media(max-width:375px) {
+            html {
+                font-size: 20%;
+            }
+        }
+
+        @media(max-width:426px) {
+            html {
+                font-size: 21%;
+            }
+        }
+
+        @media(max-width:541px) {
+            html {
+                font-size: 26%;
+            }
+        }
+
+        @media(max-width:769px) {
+            html {
+                font-size: 36%;
+            }
+        }
+
+        @media(max-width:1025px) {
+            html {
+                font-size: 48%;
+            }
+        }
+
+        @media(max-width:1355px) {
+            html {
+                font-size: 62.5%;
+            }
+        }
+
+        @media(max-width:1441px) {
+            html {
+                font-size: 65%;
+            }
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Baloo 2', cursive;
+
+        }
+
+        .main {
+            width: 135rem;
+            height: 60rem;
+        }
+
+        .cont {
+            width: 60rem;
+            height: 51rem;
+            position: relative;
+            top: 5rem;
+            left: 40rem;
+            border: .1rem solid gray;
+            border-radius: 1rem;
+            transition: .5s;
+        }
+
+        .cont:hover {
+            box-shadow: .1rem .1rem 2rem whitesmoke;
+        }
+
+        .head {
+            width: 60rem;
+            display: flex;
+            height: 8rem;
+        }
+
+        .logo img {
+            width: 30rem;
+            height: 10rem;
+        }
+
+        .inv {
+            width: 60rem;
+            height: 8rem;
+            padding-top: 2.5rem;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        #ino {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: gray;
+        }
+
+        .add {
+            width: 60rem;
+            height: 15rem;
+            display: flex;
+            padding-top: 2rem;
+        }
+
+        .to {
+            width: 30rem;
+            height: 15rem;
+            line-height: 1rem;
+            padding-left: 2rem;
+            font-size: 1.2rem;
+        }
+
+        #to {
+            font-size: 2rem;
+            color: rgb(240, 37, 10);
+            line-height: 2.5rem;
+        }
+
+        #p1 {
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        #name {
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        .from {
+            width: 30rem;
+            height: 15rem;
+            line-height: 1rem;
+            font-size: 1.2rem;
+            padding-left: 5rem;
+        }
+
+        #from {
+            font-size: 2rem;
+            color: rgb(240, 37, 10);
+            line-height: 2.5rem;
+        }
+
+        .det {
+            width: 60rem;
+            height: 10rem;
+            line-height: 1rem;
+            font-size: 1.5rem;
+            padding-left: 2rem;
+            padding-top: 2rem;
+        }
+
+        .total {
+            width: 60rem;
+            height: 5rem;
+            padding-left: 32rem;
+            padding-top: .5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: whitesmoke;
+        }
+
+        #amount {
+            font-size: 2.5rem;
+            color: rgb(240, 37, 10);
+        }
+
+        .thank {
+            width: 60rem;
+            height: 5rem;
+            font-size: 2rem;
+            padding-left: 15rem;
+            padding-top: 3rem;
+        }
+
+        .thank span{
+            color: rgb(240, 37, 10);
+            font-weight: bold;
+        }
+
+        #dk{
+             color: gray;
+             font-size: 2.5rem;
+        }
+
+        .foot {
+            padding-left: 35rem;
+            font-size: 2rem;
+        }
+    </style>
+
+    <script>
+        function myFunction() {
+
+            var email = localStorage.getItem("email");
+            var mobile = localStorage.getItem("mobile");
+            var name = localStorage.getItem("name");
+            var amount = localStorage.getItem("amount");
+
+            const d = new Date();
+            var month = d.getUTCMonth();
+            document.getElementById("mail").innerHTML = email;
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("amount").innerHTML += amount;
+            document.getElementById("mobileno").innerHTML = mobile;
+            document.getElementById("date").innerHTML = d.getUTCDate();
+            document.getElementById("date").innerHTML += "-";
+            document.getElementById("date").innerHTML += month + 1;
+            document.getElementById("date").innerHTML += "-";
+            document.getElementById("date").innerHTML += d.getUTCFullYear();
+
+        }
+
+    </script>
+</head>
+
+<body onload="myFunction()">
+    <div class="main">
+        <div class="cont">
+            <div class="head">
+                <div class="logo">
+                    <img src="https://www.donatekart.com/images/dkLogo.png" alt="">
+                </div>
+
+                <div class="inv">
+                    <p id="ino">INVOICE</p>
+                </div>
+
+            </div>
+
+            <div style="background-color: rgb(240, 37, 10);margin-top: 2rem; width: 59.7rem; height: .5rem;"></div>
+
+            <div class="add">
+                <div class="to">
+                    <p id="to">To :</p>
+                    <p id="name">name</p>
+                    <p id="mail">email</p>
+                    <p id="mobileno">Mobile :</p>
+                </div>
+
+                <div class="from">
+                    <p id="from">From :</p>
+                    <p id="p1">Jay Godhani</p>
+                    <p>bhautikgodhani97@gmail.com</p>
+                    <p>9099078571</p>
+                </div>
+            </div>
+
+            <div style="background-color: rgb(240, 37, 10); margin-top: -2rem; width: 30rem; height: .5rem;"></div>
+
+            <div class="det">
+                <p>Invoice # : 213045</p>
+                <p>Date : <span id="date"></span></p>
+                <p>Payment Method : Online Payment</p>
+            </div>
+
+            <div class="total">
+                <p>Total Payment : &nbsp; <span id="amount">₹&nbsp;</span></p>
+            </div>
+
+            <div
+                style="background-color: rgb(240, 37, 10); position: relative; left: 29.8rem; margin-top: 1rem; width: 30rem; height: .5rem;">
+            </div>
+
+            <div class="thank">
+                <p>Thank You For Using <span id="dk">Donate<span>Kart</span></span></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
